@@ -6,37 +6,67 @@
     <title>Agrahari Enterprises - Carpentry & Interior Contractor</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f5f5f5;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; background: #ffffff; }
+
+        /* HEADER */
         header {
-            background: #2c3e50;
-            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50, #4a6b82);
+            padding: 30px;
             color: white;
             text-align: center;
         }
+
+        /* NAVIGATION */
         nav {
-            background: #34495e;
-            padding: 10px;
+            background: #1e2c38;
+            padding: 12px;
             text-align: center;
         }
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 18px;
+            font-size: 16px;
             display: inline-block;
         }
         nav a:hover {
-            background: #2c3e50;
+            background: #34495e;
+            border-radius: 5px;
         }
+
+        /* SLIDER */
+        .slider {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slides {
+            display: flex;
+            width: 300%;
+            animation: slide 10s infinite;
+        }
+        .slides img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        @keyframes slide {
+            0% {transform: translateX(0%);}
+            33% {transform: translateX(-100%);}
+            66% {transform: translateX(-200%);}
+            100% {transform: translateX(0%);}
+        }
+
+        /* SECTIONS */
         .section {
             padding: 40px;
-            text-align: center;
             max-width: 900px;
             margin: auto;
+            text-align: center;
         }
+
+        /* SERVICES */
         .services {
             display: flex;
             justify-content: space-around;
@@ -44,17 +74,49 @@
         }
         .service-box {
             background: white;
-            width: 300px;
+            width: 280px;
             margin: 15px;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 0 10px #ccc;
         }
+
+        /* CONTACT BUTTONS */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .btn {
+            display: block;
+            background: #25D366;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 0 10px #777;
+        }
+        .call-btn {
+            background: #0A84FF;
+        }
+
         footer {
             background: #2c3e50;
             color: white;
             padding: 15px;
             text-align: center;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .service-box { width: 100%; }
+            .slides img { height: 200px; }
         }
     </style>
 </head>
@@ -62,7 +124,7 @@
 <body>
 
 <header>
-    <h1>Agrhari Enterprises</h1>
+    <h1>Agrahari Enterprises</h1>
     <p>Carpentry Work | Interior Contractor | Custom Furniture</p>
 </header>
 
@@ -72,75 +134,45 @@
     <a href="#contact">Contact</a>
 </nav>
 
-<section id="about" class="section">
-    <h2>About Us</h2>
-    <p><strong>Agrahari Enterprises</strong> is a leading carpentry and interior contracting company known for high-quality craftsmanship, innovative design, and dependable service. We specialize in transforming spaces by combining creativity, functionality, and durable construction materials.</p>
-
-    <p>Founded and managed by <strong>Yogendra Agrahari</strong>, our company believes that every project—big or small—deserves attention to detail, honesty, and a commitment to excellence. With a deep understanding of modern trends and practical requirements, we provide customized solutions that match your lifestyle, business needs, and budget.</p>
-
-    <p>At Agrahari Enterprises, we don’t just build furniture or interiors—we create spaces that reflect your personality and enhance your everyday experience. From concept planning to flawless execution, we handle everything with precision and professionalism.</p>
-
-    <h3>Why Choose Agrahari Enterprises?</h3>
-    <ul style="text-align: left;">
-        <li>Premium quality work with high-grade materials</li>
-        <li>Fully customized designs based on your requirements</li>
-        <li>Affordable and transparent pricing</li>
-        <li>Timely project delivery</li>
-        <li>Skilled and professional team</li>
-    </ul>
-
-    <h3>Our Mission</h3>
-    <p>To provide high-quality carpentry and interior services that combine creativity, reliability, and complete customer satisfaction.</p>
-
-    <h3>Our Vision</h3>
-    <p>To be the most trusted and preferred interior contracting company recognized for innovative ideas, exceptional workmanship, and customer-focused service.</p>
-</section>
-
-<section id="services" class="section">
-    <h2>Our Services</h2>
-    <div class="services">
-
-        <div class="service-box">
-            <h3>Carpentry Work</h3>
-            <p>Custom furniture, modular work, wooden fixtures, and all types of carpentry projects.</p>
-        </div>
-
-        <div class="service-box">
-            <h3>Interior Design</h3>
-            <p>Modern and creative interior design for homes, offices, showrooms, and restaurants.</p>
-        </div>
-
-        <div class="service-box">
-            <h3>False Ceiling</h3>
-            <p>Professional POP and Gypsum false ceiling installation and designs.</p>
-        </div>
-
-        <div class="service-box">
-            <h3>Kitchen Interiors</h3>
-            <p>Modular kitchens, cabinets, and smart storage solutions.</p>
-        </div>
-
-        <div class="service-box">
-            <h3>Office Interiors</h3>
-            <p>Workstations, partitions, office furniture, and complete office setup services.</p>
-        </div>
-
+<!-- IMAGE SLIDER -->
+<div class="slider">
+    <div class="slides">
+        <img src="https://images.unsplash.com/photo-1598300051070-bdc1fdb3a9f2" alt="">
+        <img src="https://images.unsplash.com/photo-1586105251261-72a756497a12" alt="">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="">
     </div>
-</section>
+</div>
+
+<section id="about" class="section">
+    <p><strong>Agrahari Enterprises</strong> is a leading carpentry and interior contracting company known for high-quality craftsmanship, innovative design, and dependable service. We specialize in transforming spaces by combining creativity, functionality, and durable construction materials.</p> <p>Founded and managed by <strong>Yogendra Agrahari</strong>, our company believes that every project—big or small—deserves attention to detail, honesty, and a commitment to excellence. With a deep understanding of modern trends and practical requirements, we provide customized solutions that match your lifestyle, business needs, and budget.</p> <p>At Agrahari Enterprises, we don’t just build furniture or interiors—we create spaces that reflect your personality and enhance your everyday experience. From concept planning to flawless execution, we handle everything with precision and professionalism.</p> <h3>Why Choose Agrahari Enterprises?</h3> <ul style="text-align: left;"> <li>Premium quality work with high-grade materials</li> <li>Fully customized designs based on your requirements</li> <li>Affordable and transparent pricing</li> <li>Timely project delivery</li> <li>Skilled and professional team</li> </ul> <h3>Our Mission</h3> <p>To provide high-quality carpentry and interior services that combine creativity, reliability, and complete customer satisfaction.</p> <h3>Our Vision</h3> <p>To be the most trusted and preferred interior contracting company recognized for innovative ideas, exceptional workmanship, and customer-focused service.</p> </section> <section id="services" class="section"> <h2>Our Services</h2> <div class="services"> <div class="service-box"> <h3>Carpentry Work</h3> <p>Custom furniture, modular work, wooden fixtures, and all types of carpentry projects.</p> </div> <div class="service-box"> <h3>Interior Design</h3> <p>Modern and creative interior design for homes, offices, showrooms, and restaurants.</p> </div> <div class="service-box"> <h3>False Ceiling</h3> <p>Professional POP and Gypsum false ceiling installation and designs.</p> </div> <div class="service-box"> <h3>Kitchen Interiors</h3> <p>Modular kitchens, cabinets, and smart storage solutions.</p> </div> <div class="service-box"> <h3>Office Interiors</h3> <p>Workstations, partitions, office furniture, and complete office setup services.</p> </div> </div> </section>
 
 <section id="contact" class="section">
     <h2>Contact Us</h2>
     <p><strong>Company:</strong> Agrahari Enterprises</p>
     <p><strong>Owner:</strong> Yogendra Agrahari</p>
-    <p><strong>Phone:</strong> +919833534389</p>
+    <p><strong>Phone:</strong> +91 98335 34389</p>
     <p><strong>Email:</strong> agraharienterprises001@gmail.com</p>
     <p><strong>Address:</strong> GR. FLOOR ROOM NO 145, NEAR RAKESH KIRANA STORE, SANGAM NAGAR, WADALA EAST, MUMBAI - 400037</p>
+
+    <!-- GOOGLE MAP -->
+    <iframe
+        width="100%"
+        height="300"
+        frameborder="0" 
+        style="border:0; margin-top:20px;"
+        src="https://www.google.com/maps?q=Sangam%20Nagar%20Wadala%20East%20400037&output=embed">
+    </iframe>
 </section>
 
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="floating-buttons">
+    <a class="btn" href="https://wa.me/919833534389" target="_blank">WhatsApp Chat</a>
+    <a class="btn call-btn" href="tel:919833534389">Call Now</a>
+</div>
+
 <footer>
-    <p>© 2024 Agrhari Enterprises - All Rights Reserved</p>
+    <p>© 2024 Agrahari Enterprises - All Rights Reserved</p>
 </footer>
 
 </body>
 </html>
-
